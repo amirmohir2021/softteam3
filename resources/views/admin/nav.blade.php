@@ -29,6 +29,13 @@
                                 <button type="submit" class="btn btn-primary">Chiqish</button>
                             </form>
                         </li>
+                        <li>
+                            <div class="dropdown-divider"></div>
+                            <form action="{{route('index')}}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn btn-primary">Front End</button>
+                            </form>
+                        </li>
                     </div>
                 </ul>
             </li>

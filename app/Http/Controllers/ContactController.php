@@ -36,21 +36,8 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        $request =$this->validate([
-           'name'=>required
-        ]);
-        $file = $request->all();
-        if($request->hasFile('file'))
-        {
-            $destination_path ='public/images/contact';
-            $image = $request->file('file');
-            $image_name =$image->getClientOriginalName();
-            $path =$request->file('file')->storeAs($destination_path,$image_name);
-        }
-        Contact::create($file);
-        session()->flash('message',$file['name'].'suucesfully saved');
-        return redirect('/',compact('file'));
-
+        $file = time().'.jpg';
+        $request->file->move('contact/',$file);
         $contact =new Contact();
         $contact['name'] = $request['name'];
         $contact['email'] = $request['email'];

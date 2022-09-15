@@ -23,6 +23,8 @@
                             <th>Ism Familya</th>
                             <th>Projekt Nomi</th>
                             <th>Comment</th>
+                             <th>Photo</th>
+
                             <th scope="col">Amallar</th>
                         </tr>
                         </thead>
@@ -33,6 +35,7 @@
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->project }}</td>
                                 <td>{{ $item->comment }}</td>
+                                <td>{{ $item->photo }}</td>
                                 <td class="col-2">
                                     <form action="{{ route('admin.client.destroy',$item->id) }}" method="POST">
                                         <a class="btn btn-warning btn-sm" href="{{ route('admin.client.edit',$item->id) }}">

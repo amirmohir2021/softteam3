@@ -5,7 +5,7 @@
         <div class="card">
             <div class="card-header">
                 <div class="row">
-                    <div class="col-10"><h1 class="card-title">Xodim yaratish</h1></div>
+                    <div class="col-10"><h1 class="card-title">Portfolio</h1></div>
                 </div>
                 <hr>
                 <div class="card-body">
@@ -26,7 +26,7 @@
                         @csrf
 
                         <div class="form-group">
-                            <label for="name">Title</label></br>
+                            <label for="name">Name</label></br>
                             <input type="text" name="title" id="name" class="form-control" required>
                         </div>
                         <div class="form-group">

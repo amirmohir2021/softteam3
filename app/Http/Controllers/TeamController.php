@@ -39,7 +39,7 @@ class TeamController extends Controller
     public function store(Request $request)
     {
         $file = time().'.jpg';
-        $request->file->move('/photo/',$file);
+        $request->file->move('team/',$file);
         $team = new Team();
         $team['name'] = $request['name'];
         $team['email'] =$request['email'];

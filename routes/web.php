@@ -29,9 +29,18 @@ Route::prefix('admin')->name('admin.')->middleware(['web', 'auth'])->group(funct
     Route::resource('team', \App\Http\Controllers\TeamController::class);
     Route::resource('contact', \App\Http\Controllers\ContactController::class);
     Route::resource('servisec',\App\Http\Controllers\ServisecController::class);
+    Route::resource('story',\App\Http\Controllers\StoryController::class);
+    Route::resource('client',\App\Http\Controllers\ClientController::class);
+    Route::resource('savol',\App\Http\Controllers\SavolController::class);
+    Route::resource('javob',\App\Http\Controllers\JavobController::class);
+    Route::resource('clien',\App\Http\Controllers\ClienController::class);
+
 });
 
-Route::get('/index', [\App\Http\Controllers\ViewController::class, 'index'])->name('index');
+
+
+Route::post('/index', [\App\Http\Controllers\ViewController::class, 'index'])->name('index');
+Route::get('/mon', [\App\Http\Controllers\MonController::class, 'mon'])->name('mon');
 Route::get('/about',[\App\Http\Controllers\AboutController::class,'about'])->name('about');
 Route::get('/contac',[\App\Http\Controllers\ContacController::class,'contac'])->name('contac');
 Route::get('/servic',[\App\Http\Controllers\ServicController::class,'servic'])->name('servic');

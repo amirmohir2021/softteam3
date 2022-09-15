@@ -37,8 +37,8 @@ class ServisecController extends Controller
      */
     public function store(Request $request)
     {
-        $file=time().'.jpg'.'.png'.'.jpeg';
-        $request()->file->move('/photo',$file);
+        $file=time().'.jpg';
+        $request->file->move('photo/',$file);
         $servisec = new Servisec();
         $servisec['title']=$request['title'];
         $servisec['file'] =$file;

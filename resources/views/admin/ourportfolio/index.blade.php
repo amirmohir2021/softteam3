@@ -20,7 +20,7 @@
                         <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th>Title</th>
+                            <th>Name</th>
                             <th>Filename</th>
                             <th scope="col">Amallar</th>
                         </tr>

@@ -38,6 +38,10 @@
                             <label for="name">Isoh</label></br>
                             <input type="text" name="comment" id="name" class="form-control" required>
                         </div>
+                        <div class="form-group">
+                            <label for="">Select Image File to Upload:</label>
+                            <input type="file" name="photo">
+                        </div>
 
 
                         <button type="submit" id="alert" class="btn btn-primary">Saqlash</button>

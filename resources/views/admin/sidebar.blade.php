@@ -2,12 +2,6 @@
     <div class="sidebar-wrapper scrollbar scrollbar-inner">
         <div class="sidebar-content">
             <ul class="nav nav-primary">
-                <li class="nav-item {{  request()->routeIs('admin.users.index') ? 'active' : '' }}">
-                    <a href="#">
-                        <i class="fas fa-user"></i>
-                        <p>Пользователь</p>
-                    </a>
-                </li>
 
                 @if(\Illuminate\Support\Facades\Auth::user()->id == 1)
                     <li class="nav-item {{ request()->routeIs('admin.ourportfolio.index') ? 'active' : '' }} ">
@@ -40,6 +34,32 @@
                         <a href="{{ route('admin.servisec.index') }}">
                             <i class="bbi bi-person-plus-fill"></i>
                             <p>Xizmatlar</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item {{ request()->routeIs('admin.story.index') ? 'active' : '' }} ">
+                        <a href="{{ route('admin.story.index') }}">
+                            <i class="bbi bi-person-plus-fill"></i>
+                            <p>Projects</p>
+                        </a>
+                    </li>
+                    <li class="nav-item {{ request()->routeIs('admin.client.index') ? 'active' : '' }} ">
+                        <a href="{{ route('admin.client.index') }}">
+                            <i class="bbi bi-person-plus-fill"></i>
+                            <p>Clients</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item {{ request()->routeIs('admin.savol.index') ? 'active' : '' }} ">
+                        <a href="{{ route('admin.savol.index') }}">
+                            <i class="bbi bi-person-plus-fill"></i>
+                            <p>Savollar</p>
+                        </a>
+                    </li>
+                    <li class="nav-item {{ request()->routeIs('admin.javob.index') ? 'active' : '' }} ">
+                        <a href="{{ route('admin.javob.index') }}">
+                            <i class="bbi bi-person-plus-fill"></i>
+                            <p>Javoblar</p>
                         </a>
                     </li>
                 @endif

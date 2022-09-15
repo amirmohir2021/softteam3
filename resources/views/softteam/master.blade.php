@@ -63,7 +63,7 @@
 
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav ml-auto">
-                                <a href="{{ route('index') }}" class="nav-item nav-link active">Home</a>
+                                <a href="{{ route('mon') }}" class="nav-item nav-link active">Home</a>
                                 <a href="{{route('about')}}" class="nav-item nav-link">About Us</a>
                                 <a href="{{route('servic')}}" class="nav-item nav-link">Services</a>
                                 <a href="{{route('portfolio')}}" class="nav-item nav-link">Portfolio</a>

@@ -34,22 +34,21 @@
                         <h3>E-mail <span>contact@example.com</span></h3>
                     </div>
                 </div>
+
                 <div class="col-md-6">
                     <div class="editor-info">
-                        <h2 class="section-title">Contact Person</h2>
-                        @foreach(Contact::content() as $key)
+                        <h2 class="section-title">Contact Persons</h2>
                         <div class="editor-item">
+                            @foreach(\App\Models\Contact::all() as $value)
                             <div class="editor-img">
-                                <td><img  src="{{$file}}" alt=""></td>
+                                <img src="{{'contact/'.$value->file}}" alt="Editor Image">
                             </div>
                             <div class="editor-text">
-                                <h3>{{$key->name}}</h3>
-                                <h3>{{$key->email}}</h3>
-
+                                <p>{{$value->name}}</p>
+                                <a href="">{{$value->email}}</a>
                             </div>
                         </div>
-
-
+                        @endforeach
                         </div>
                     </div>
                 </div>
@@ -57,9 +56,62 @@
         </div>
     </div>
     <!-- Contact End -->
+    <div id="contact" class="text-center">
+        <div class="overlay">
+            <div class="container">
+                <div class="col-md-8 col-md-offset-2 section-title">
+                    <h2>Uyga yetkazish Ucun</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor apibus lornare diam commodo nibh.</p>
+                </div>
+                <div class="col-md-8 col-md-offset-2">
+
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    <form action="{{route('clien.store')}}" method="POST" >
+                        @csrf
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" id="name" name="name" class="form-control" placeholder="Ism" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="email" id="email" name="email"  class="form-control" placeholder="Email" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" id="phone" name="phone"  class="form-control" placeholder="Telefon Nomer" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" id="address" name="address"  class="form-control" placeholder="Address" required>
+                                </div>
+                            </div>
+                        </div>
 
 
-    <!-- Call to Action Start -->
+                        <input type="submit" class="btn btn-primary" value="Saqlash1">
+                        <input type="reset" class="btn btn-danger" value="Tozalash">
+                    </form>
+
+
+                    <!-- Call to Action Start -->
     <div class="call-to-action">
         <div class="container">
             <div class="row align-items-center">
@@ -76,5 +128,6 @@
         </div>
     </div>
     <!-- Call to Action End -->
+
 
 @endsection

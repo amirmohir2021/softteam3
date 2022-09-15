@@ -38,7 +38,7 @@ class OurportfolioController extends Controller
     {
 //        dd($request);
         $file = time().'.jpg';
-        $request->file->move('/image/',$file);
+        $request->file->move('image/',$file);
         $our = new Our();
         $our['title'] = $request['title'];
         $our['filename'] = $file;
